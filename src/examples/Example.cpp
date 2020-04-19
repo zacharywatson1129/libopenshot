@@ -58,7 +58,7 @@ int main(int argc, char* argv[]) {
     w9.SetVideoOptions(true, "libx264", r9.info.fps, 1024, 576, Fraction(1,1), false, false, 3000000);
 
     w9.info.metadata["title"] = "testtest";
-	w9.info.metadata["artist"] = "aaa";
+    w9.info.metadata["artist"] = "aaa";
 	w9.info.metadata["album"] = "bbb";
 	w9.info.metadata["year"] = "2015";
 	w9.info.metadata["description"] = "ddd";
@@ -71,9 +71,7 @@ int main(int argc, char* argv[]) {
 
     for (long int frame = 1; frame <= 100; frame++)
     {
-        //int frame_number = (rand() % 750) + 1;
-        int frame_number = frame;
-        std::shared_ptr<Frame> f = r9.GetFrame(frame_number);
+        std::shared_ptr<Frame> f = r9.GetFrame(frame);
         w9.WriteFrame(f);
     }
 
